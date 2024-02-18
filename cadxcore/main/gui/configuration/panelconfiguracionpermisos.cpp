@@ -149,7 +149,6 @@ public:
                         }
                 }
 
-                m_pGridPermisos->GetRoot()->SetFlagRecursively(wxPG_PROP_NO_ESCAPE, true);
                 m_pGridPermisos->Connect(wxEVT_PG_DOUBLE_CLICK, wxPropertyGridEventHandler( ProfileDialog::OnPgDoubleClick ), NULL, this );
                 m_pGridPermisos->Connect(wxEVT_PG_RIGHT_CLICK, wxPropertyGridEventHandler( ProfileDialog::OnPgMenu ), NULL, this );
         }

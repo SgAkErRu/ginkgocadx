@@ -33,7 +33,7 @@ OFBool GTLSTransportLayer::setTempDHParametersFromString(const std::string& /*pa
 {
 #if defined(USE_PATCHED_LIBS)
         if (!transportLayerContext) {
-                return OFFalse; //TCS_illegalCall;
+                return OFFalse; //EC_IllegalCall;
         }
         if (params.size()) {
                 std::cerr << "No implementado" << std::endl;
@@ -48,11 +48,11 @@ GTLSTransportLayer::~GTLSTransportLayer()
 
 }
 
-DcmTransportLayerStatus GTLSTransportLayer::setPrivateKeyFromString(const std::string& /*keyStr*/)
+OFCondition GTLSTransportLayer::setPrivateKeyFromString(const std::string& /*keyStr*/)
 {
 #if defined(USE_PATCHED_LIBS)
         if (!transportLayerContext) {
-                return TCS_illegalCall;
+                return EC_IllegalCall;
         }
 
         int ret = 0;
@@ -66,24 +66,24 @@ DcmTransportLayerStatus GTLSTransportLayer::setPrivateKeyFromString(const std::s
 
         if (pkey == NULL) {
                 std::cerr << "Error al leer el clave privada" << std::endl;
-                return TCS_tlsError;
+                return DCMTLS_EC_FailedToLoadPrivateKey;
         }
 
         ret = SSL_CTX_use_PrivateKey(transportLayerContext, pkey);
         EVP_PKEY_free(pkey);
 
         if (ret <= 0) {
-                return TCS_tlsError;
+                return DCMTLS_EC_FailedToLoadPrivateKey;
         }
 #endif
-        return TCS_ok;
+        return EC_Normal;
 }
 
-DcmTransportLayerStatus GTLSTransportLayer::setCertificateFromString(const std::string& /*certStr*/)
+OFCondition GTLSTransportLayer::setCertificateFromString(const std::string& /*certStr*/)
 {
 #if defined(USE_PATCHED_LIBS)
         if (!transportLayerContext) {
-                return TCS_illegalCall;
+                return EC_IllegalCall;
         }
 
         int ret = 0;
@@ -98,15 +98,15 @@ DcmTransportLayerStatus GTLSTransportLayer::setCertificateFromString(const std::
 
         if (cert == NULL) {
                 std::cerr << "Error al leer el certificado" << std::endl;
-                return TCS_tlsError;
+                return DCMTLS_EC_FailedToLoadCertificate;
         }
 
         ret = SSL_CTX_use_certificate(transportLayerContext, cert);
         if (ret <= 0 ) {
-                return TCS_tlsError;
+                return DCMTLS_EC_FailedToLoadCertificate;
         }
 #endif
-        return TCS_ok;
+        return EC_Normal;
 }
 
 #ifdef _WIN32
@@ -143,11 +143,11 @@ void LoadSystemTrustedCertificates(X509_STORE *store)
 #endif
 }
 
-DcmTransportLayerStatus GTLSTransportLayer::addSystemTrustedCertificates()
+OFCondition GTLSTransportLayer::addSystemTrustedCertificates()
 {
 #if defined(USE_PATCHED_LIBS)
         if (!transportLayerContext) {
-                return TCS_illegalCall;
+                return EC_IllegalCall;
         }
 
         //int ret = 0;
@@ -156,11 +156,11 @@ DcmTransportLayerStatus GTLSTransportLayer::addSystemTrustedCertificates()
         if(almacen != NULL) {
                 LoadSystemTrustedCertificates(almacen);
         } else {
-                return TCS_tlsError;
+                return DCMTLS_EC_TLSMissingSigningCert;
         }
 #endif
 
-        return TCS_ok;
+        return EC_Normal;
 }
 
 

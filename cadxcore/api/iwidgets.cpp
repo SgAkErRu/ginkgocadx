@@ -61,9 +61,9 @@ GNC::GCS::Nodo GNC::GCS::Nodo::Deserializar(wxXmlNode* nodo)
 wxXmlNode* GNC::GCS::Nodo::Serializar()
 {
         wxXmlNode* resultado = new wxXmlNode(NULL,wxXML_ELEMENT_NODE,wxT("node"));
-        resultado->AddAttribute(new wxXmlProperty(wxT("x"),wxString::Format(wxT("%f"),x)));
-        resultado->AddAttribute(new wxXmlProperty(wxT("y"),wxString::Format(wxT("%f"),y)));
-        resultado->AddAttribute(new wxXmlProperty(wxT("size"),wxString::Format(wxT("%f"),m_Size)));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("x"),wxString::Format(wxT("%f"),x)));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("y"),wxString::Format(wxT("%f"),y)));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("size"),wxString::Format(wxT("%f"),m_Size)));
         return resultado;
 }
 

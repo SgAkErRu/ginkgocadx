@@ -49,6 +49,8 @@ PURPOSE.  See the above copyright notice for more information.
 #include <vtkCamera.h>
 #include <vtkInteractorObserver.h>
 
+#include <vtkObjectFactory.h>
+
 
 // function to get VTK keysyms from ascii characters
 static const char* ascii_to_key_sym(int);
@@ -139,6 +141,9 @@ public:
 #include <gdk/gdkx.h>
 #include "gdk/gdkprivate.h"
 #include <gtk/gtk.h>
+
+#define GetXWindow(wxwin) GDK_WINDOW_XID(gtk_widget_get_window((wxwin)->m_widget))
+
 #endif
 
 #ifdef __WXX11__
@@ -164,7 +169,7 @@ IMPLEMENT_DYNAMIC_CLASS(wxVTKRenderWindowInteractor, wxWindow)
 #if defined(__WXGTK__) && defined(wxUSE_GLCANVAS)
 BEGIN_EVENT_TABLE(wxVTKRenderWindowInteractor, wxGLCanvas)
 #else
-        BEGIN_EVENT_TABLE(wxVTKRenderWindowInteractor, wxWindow)
+BEGIN_EVENT_TABLE(wxVTKRenderWindowInteractor, wxWindow)
 #endif //__WXGTK__
         //refresh window by doing a Render
         EVT_PAINT       (wxVTKRenderWindowInteractor::OnPaint)
@@ -192,11 +197,13 @@ BEGIN_EVENT_TABLE(wxVTKRenderWindowInteractor, wxGLCanvas)
         EVT_SIZE        (wxVTKRenderWindowInteractor::OnSize)
 END_EVENT_TABLE()
 
-//vtkCxxMacro(wxVTKRenderWindowInteractor, "$Revision: 1276 $")
-vtkInstantiatorNewMacro(wxVTKRenderWindowInteractor)
+//vtkCxxRevisionMacro(wxVTKRenderWindowInteractor, "$Revision: 1276 $")
+vtkStandardNewMacro(wxVTKRenderWindowInteractor)
+
+// Тут он хотел какой-то макрос выполнить..
 
 #if defined(__WXGTK__) && defined(wxUSE_GLCANVAS)
-static int wxvtk_attributes[]= {
+static int wxvtk_attributes[5] = {
         WX_GL_DOUBLEBUFFER,
         WX_GL_RGBA,
         WX_GL_DEPTH_SIZE,
@@ -303,11 +310,11 @@ wxVTKRenderWindowInteractor::~wxVTKRenderWindowInteractor()
         // delete GLContext;
 }
 //---------------------------------------------------------------------------
-wxVTKRenderWindowInteractor * wxVTKRenderWindowInteractor::New()
+/*wxVTKRenderWindowInteractor * wxVTKRenderWindowInteractor::New()
 {
         // we don't make use of the objectfactory, because we're not registered
         return new wxVTKRenderWindowInteractor;
-}
+}*/
 //---------------------------------------------------------------------------
 void wxVTKRenderWindowInteractor::Initialize()
 {
@@ -378,7 +385,7 @@ void wxVTKRenderWindowInteractor::UpdateSize(int x, int y)
                         Size[0] = x;
                         Size[1] = y;
                         // and our RenderWindow's size
-                        RenderWindow->SetSize(x, y);
+                        //RenderWindow->SetSize(x, y);
                 }
                 if (x > 0 && y > 0) {
                         CrearContexto3D(x,y);
@@ -478,7 +485,7 @@ long wxVTKRenderWindowInteractor::GetHandleHack()
 
         // Find and return the actual X-Window.
 #if defined(__WXGTK__) || defined(__WXX11__)
-        return this->GetXWindow();
+        return (long)GetXWindow(this);
 #else
         return handle_tmp;
 #endif

@@ -166,12 +166,13 @@ void wxGinkgoToolBarArt::DrawDropDownButton(
                 dc.GetTextExtent(item.GetLabel(), &textWidth, &ty);
         }
 
+        const auto dropDownBmp = m_buttonDropDownBmp.GetBitmap(wxDefaultSize);
         dropBmpX = dropDownRect.x +
                    (dropDownRect.width/2) -
-                   (m_buttonDropDownBmp.GetWidth()/2);
+                   (dropDownBmp.GetWidth()/2);
         dropBmpY = dropDownRect.y +
                    (dropDownRect.height/2) -
-                   (m_buttonDropDownBmp.GetHeight()/2);
+                   (dropDownBmp.GetHeight()/2);
 
         if (m_textOrientation == wxAUI_TBTOOL_TEXT_BOTTOM) {
                 bmpX = buttonRect.x +
@@ -223,10 +224,10 @@ void wxGinkgoToolBarArt::DrawDropDownButton(
         wxBitmap dropbmp;
         if (item.GetState() & wxAUI_BUTTON_STATE_DISABLED) {
                 bmp = item.GetDisabledBitmap();
-                dropbmp = m_disabledButtonDropDownBmp;
+                dropbmp = m_disabledButtonDropDownBmp.GetBitmap(wxDefaultSize);
         } else {
                 bmp = item.GetBitmap();
-                dropbmp = m_buttonDropDownBmp;
+                dropbmp = m_buttonDropDownBmp.GetBitmap(wxDefaultSize);
         }
 
         if (!bmp.IsOk())

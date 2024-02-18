@@ -728,7 +728,7 @@
     <ClInclude Include="main\utils\ginkgomatrix4x4.h" />
     <ClInclude Include="VTKInria3D\vtkVISUManagement\lut\PERFUSION.h" />
     <ClInclude Include="vtk\vtkginkgoimageviewer.h" />
-    <ClInclude Include="vtk\vtkopenglginkgotexture.h" />
+    <ClInclude Include="vtk\penglginkgotexture.h" />
     <ClInclude Include="vtk\vtkSmartVolumeMapper.h" />
     <ClInclude Include="vtk\command\ginkgoimagecommand.h" />
     <ClInclude Include="vtk\interactor\ginkgointeractorstyleimage2d.h" />

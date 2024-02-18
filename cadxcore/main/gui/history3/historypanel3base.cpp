@@ -80,16 +80,16 @@ HistoryPanel3Base::HistoryPanel3Base( wxWindow* parent, wxWindowID id, const wxS
 
         m_pAnyDate = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Any date"), wxDefaultPosition, wxDefaultSize, wxRB_GROUP );
         m_pAnyDate->SetValue( true );
-        bSizer181->Add( m_pAnyDate, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 2 );
+        bSizer181->Add( m_pAnyDate, 0, wxBOTTOM|wxRIGHT|wxLEFT, 2 );
 
         m_pTodayAM = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Today AM"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer181->Add( m_pTodayAM, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+        bSizer181->Add( m_pTodayAM, 0, wxALL, 2 );
 
         m_pTodayPM = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Today PM"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer181->Add( m_pTodayPM, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+        bSizer181->Add( m_pTodayPM, 0, wxALL, 2 );
 
         m_pToday = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Today"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer181->Add( m_pToday, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+        bSizer181->Add( m_pToday, 0, wxALL, 2 );
 
 
         bSizer17->Add( bSizer181, 1, wxEXPAND, 5 );
@@ -98,16 +98,16 @@ HistoryPanel3Base::HistoryPanel3Base( wxWindow* parent, wxWindowID id, const wxS
         bSizer29 = new wxBoxSizer( wxVERTICAL );
 
         m_pYesterday = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Yesterday"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer29->Add( m_pYesterday, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxRIGHT|wxLEFT, 2 );
+        bSizer29->Add( m_pYesterday, 0, wxBOTTOM|wxRIGHT|wxLEFT, 2 );
 
         m_pLastWeek = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Last 7 days"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer29->Add( m_pLastWeek, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+        bSizer29->Add( m_pLastWeek, 0, wxALL, 2 );
 
         m_pLastMonth = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Last 30 days"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer29->Add( m_pLastMonth, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+        bSizer29->Add( m_pLastMonth, 0, wxALL, 2 );
 
         m_pLastThreeMonths = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Last 3 months"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer29->Add( m_pLastThreeMonths, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+        bSizer29->Add( m_pLastThreeMonths, 0, wxALL, 2 );
 
 
         bSizer17->Add( bSizer29, 1, wxEXPAND, 5 );
@@ -116,13 +116,13 @@ HistoryPanel3Base::HistoryPanel3Base( wxWindow* parent, wxWindowID id, const wxS
         bSizer201 = new wxBoxSizer( wxVERTICAL );
 
         m_pBetween = new wxRadioButton( m_pAdvancedSearchPanel, wxID_ANY, _("Between:"), wxDefaultPosition, wxDefaultSize, 0 );
-        bSizer201->Add( m_pBetween, 0, wxALIGN_CENTER_VERTICAL|wxALL, 2 );
+        bSizer201->Add( m_pBetween, 0, wxALL, 2 );
 
         wxBoxSizer* bSizer21;
         bSizer21 = new wxBoxSizer( wxVERTICAL );
 
         m_pTextControlFechaDesde = new wxDatePickerCtrl( m_pAdvancedSearchPanel, wxID_ANY, wxDefaultDateTime, wxDefaultPosition, wxDefaultSize, wxDP_DEFAULT|wxDP_DROPDOWN );
-        bSizer21->Add( m_pTextControlFechaDesde, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT, 2 );
+        bSizer21->Add( m_pTextControlFechaDesde, 0, wxTOP|wxBOTTOM|wxLEFT, 2 );
 
 
         bSizer201->Add( bSizer21, 0, wxEXPAND|wxLEFT, 5 );
@@ -131,7 +131,7 @@ HistoryPanel3Base::HistoryPanel3Base( wxWindow* parent, wxWindowID id, const wxS
         bSizer22 = new wxBoxSizer( wxVERTICAL );
 
         m_pTextControlFechaHasta = new wxDatePickerCtrl( m_pAdvancedSearchPanel, wxID_ANY, wxDefaultDateTime, wxDefaultPosition, wxDefaultSize, wxDP_DEFAULT|wxDP_DROPDOWN );
-        bSizer22->Add( m_pTextControlFechaHasta, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxBOTTOM|wxLEFT, 2 );
+        bSizer22->Add( m_pTextControlFechaHasta, 0, wxTOP|wxBOTTOM|wxLEFT, 2 );
 
 
         bSizer201->Add( bSizer22, 0, wxEXPAND|wxLEFT, 5 );
@@ -309,7 +309,7 @@ ConfirmDeleteDialogBase::ConfirmDeleteDialogBase( wxWindow* parent, wxWindowID i
 
         m_pLabelEliminar = new wxStaticText( m_pTitled, wxID_ANY, _("Are you sure you want to delete "), wxDefaultPosition, wxDefaultSize, 0 );
         m_pLabelEliminar->Wrap( 450 );
-        bSizer23->Add( m_pLabelEliminar, 0, wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL, 5 );
+        bSizer23->Add( m_pLabelEliminar, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5 );
 
 
         bSizer23->Add( 0, 0, 1, wxEXPAND, 5 );

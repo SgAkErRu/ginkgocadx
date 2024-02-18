@@ -2710,7 +2710,7 @@ EditHangingProtocolDialogBase::EditHangingProtocolDialogBase( wxWindow* parent, 
 
         bSizer11->Add( m_pHeader, 0, wxEXPAND, 5 );
 
-        m_pMainNoteBook = new wxNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxNB_FLAT );
+        m_pMainNoteBook = new wxNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize );
         m_pGeneralPanel = new wxPanel( m_pMainNoteBook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
         wxBoxSizer* bSizer109;
         bSizer109 = new wxBoxSizer( wxVERTICAL );

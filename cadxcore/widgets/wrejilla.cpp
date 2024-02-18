@@ -28,7 +28,7 @@
 #include <cmath>
 #include <cstring>
 
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <vtkImageData.h>
 #include <vtkImageActor.h>
 #include <vtkPointData.h>
@@ -187,7 +187,7 @@ void GNC::GCS::Widgets::WRejilla::Render(GNC::GCS::Contexto3D* c)
                 return;
         }
 
-        //esto es necesario ya que la escala esta en coord mundo así lo pasamos a coord imagen
+        //esto es necesario ya que la escala esta en coord mundo asï¿½ lo pasamos a coord imagen
         double spacing[3] = {1.0,1.0,1.0};
         c->GetRenderer()->m_pImageViewer->GetSpacing(spacing);
         GNC::GCS::Vector escalaRejilla(m_EscalaX / spacing[0], m_EscalaY / spacing[1]);

@@ -22,7 +22,7 @@
 #undef __DEPRECATED
 #endif
 #include <list>
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <cmath>
 #include <cairo/cairo.h>
 
@@ -136,9 +136,9 @@ wxXmlNode* GNC::GCS::Widgets::WTextBox::Serializar(const std::string& nombreMedi
 {
         wxXmlNode* resultado = new wxXmlNode(NULL, wxXML_ELEMENT_NODE, wxT("text_widget"));
         //almacenamos los dos nodos
-        resultado->AddAttribute(new wxXmlProperty(wxT("x"), wxString::Format(wxT("%f"),m_Posicion.x)));
-        resultado->AddAttribute(new wxXmlProperty(wxT("y"), wxString::Format(wxT("%f"),m_Posicion.y)));
-        resultado->AddAttribute(new wxXmlProperty(wxT("text"), wxString::FromUTF8(m_Texto.c_str())));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("x"), wxString::Format(wxT("%f"),m_Posicion.x)));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("y"), wxString::Format(wxT("%f"),m_Posicion.y)));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("text"), wxString::FromUTF8(m_Texto.c_str())));
         //metadatos
         SerializarMetadatos(resultado, nombreMedico);
         return resultado;

@@ -19,11 +19,11 @@
  */
 
 #pragma once
+#include <vtk_glew.h>
 #include <api/math/geometry.h>
 #include <api/iwidgets.h>
 #include <api/helpers/helpertexto.h>
 #include <api/api.h>
-#include <vtkgl.h>
 
 #ifndef GL_TEXTURE_COMPRESSION_HINT
 #define GL_TEXTURE_COMPRESSION_HINT 0x84EF

@@ -38,6 +38,7 @@
 #include <wx/msgdlg.h>
 #include <wx/menu.h>
 #include <wx/wxginkgotoolbar.h>
+#include <wx/dcclient.h>
 #include "hangingprotocolconfigurationpanel.h"
 #include <resources/ginkgoresourcesmanager.h>
 

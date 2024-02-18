@@ -267,7 +267,7 @@ VentanaPrincipal::VentanaPrincipal(wxWindow* pParent, const wxString& title) :
         m_pNoteBook = new wxGinkgoAuiNoteBook(m_pPanelCentral, wxID_ANY,wxDefaultPosition,
                                               wxDefaultSize,
                                               wxAUI_NB_TAB_SPLIT |  wxAUI_NB_TAB_MOVE | wxAUI_NB_SCROLL_BUTTONS
-                                              | wxAUI_NB_WINDOWLIST_BUTTON | wxAUI_NB_CLOSE_ON_ALL_TABS | wxEXPAND );
+                                              | wxAUI_NB_WINDOWLIST_BUTTON | wxAUI_NB_CLOSE_ON_ALL_TABS );
         m_pNoteBook->SetBackgroundColour(wxColour(0, 0, 0));
         m_pNoteBook->Connect( wxEVT_CHILD_FOCUS, wxChildFocusEventHandler( VentanaPrincipal::OnNotebookFocus ) );
 

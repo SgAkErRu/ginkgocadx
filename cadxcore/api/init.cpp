@@ -18,7 +18,7 @@
  *
  */
 
-
+#include <vtk_glew.h>
 #include "init.h"
 #include "initwx.h"
 

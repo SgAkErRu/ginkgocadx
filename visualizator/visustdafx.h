@@ -47,6 +47,9 @@
 #include <ctime>
 #include <limits>
 #include <algorithm>
+
+#include <vtk_glew.h>
+
 #include <wx/wx.h>
 #include <wx/image.h>
 #include <wx/bitmap.h>
@@ -61,7 +64,6 @@
 #include <vtkAlgorithmOutput.h>
 #include <vtkImageData.h>
 #include <vtkMatrix4x4.h>
-#include <vtkgl.h>
 
 #include <api/autoptr.h>
 #endif

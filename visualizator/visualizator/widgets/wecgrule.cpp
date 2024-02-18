@@ -35,7 +35,6 @@
 #include <widgets/wtextbox.h>
 
 #include <main/managers/widgetsmanager.h>
-#include <vtkgl.h>
 #include <cmath>
 #include <sstream>
 #include <cairo/cairo.h>
@@ -43,6 +42,7 @@
 #include <eventos/modificacionimagen.h>
 #include <resources/ginkgoresourcesmanager.h>
 #include <visualizator/estudios/ecgstudy.h>
+//#include <vtk_glew.h>
 
 #include <api/math/geometry3d.h>
 

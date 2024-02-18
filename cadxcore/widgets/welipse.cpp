@@ -28,7 +28,7 @@
 #include <api/ievento.h>
 #include <api/ioverlay.h>
 #include "main/managers/widgetsmanager.h"
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <api/westilo.h>
 #include <cmath>
 
@@ -279,8 +279,8 @@ wxXmlNode* GNC::GCS::Widgets::WElipse::Serializar(const std::string& nombreMedic
         wxXmlNode* resultado = new wxXmlNode(NULL,wxXML_ELEMENT_NODE,wxT("elipse_widget"));
         //almacenamos los dos nodos
         wxXmlNode* nodo = new wxXmlNode(NULL,wxXML_ELEMENT_NODE,wxT("centro"));
-        nodo->AddAttribute(new wxXmlProperty(wxT("x"),wxString::Format(wxT("%f"),m_Centro.x)));
-        nodo->AddAttribute(new wxXmlProperty(wxT("y"),wxString::Format(wxT("%f"),m_Centro.y)));
+        nodo->AddAttribute(new wxXmlAttribute(wxT("x"),wxString::Format(wxT("%f"),m_Centro.x)));
+        nodo->AddAttribute(new wxXmlAttribute(wxT("y"),wxString::Format(wxT("%f"),m_Centro.y)));
         resultado->AddChild(nodo);
 
         nodo = m_NodoRadioMayor.Serializar();
@@ -292,7 +292,7 @@ wxXmlNode* GNC::GCS::Widgets::WElipse::Serializar(const std::string& nombreMedic
         resultado->AddChild(nodo);
 
         nodo = new wxXmlNode(NULL,wxXML_ELEMENT_NODE,wxT("rotacion"));
-        nodo->AddAttribute(new wxXmlProperty(wxT("valor"),wxString::Format(wxT("%f"),m_Angulo)));
+        nodo->AddAttribute(new wxXmlAttribute(wxT("valor"),wxString::Format(wxT("%f"),m_Angulo)));
         resultado->AddChild(nodo);
 
         //metadatos

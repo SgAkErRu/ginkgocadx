@@ -28,7 +28,7 @@
 #ifdef __DEPRECATED
 #undef __DEPRECATED
 #endif
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <cairo/cairo.h>
 
 //--------------------------------------------------------------------------------------------

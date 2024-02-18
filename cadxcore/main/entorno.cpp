@@ -147,7 +147,7 @@ GNC::Entorno::Entorno()
         }
         std::sscanf(GINKGO_VERSION, "%u.%u.%*c", &m_mayorVersionNumber, &m_minorVersionNumber);
 
-        m_GinkgoVersion = os.str();
+        m_GinkgoVersion = os.str() + "-dev";
 
         m_GinkgoCopyRight = GINKGO_COPYRIGHT;
 

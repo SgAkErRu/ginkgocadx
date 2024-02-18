@@ -33,7 +33,7 @@ VentanaPrincipalBase::VentanaPrincipalBase( wxWindow* parent, wxWindowID id, con
 
 
 
-        bSizer17->Add( 0, 0, 1, wxEXPAND|wxALIGN_CENTER_VERTICAL, 5 );
+        bSizer17->Add( 0, 0, 1, wxALIGN_CENTER_VERTICAL, 5 );
 
         m_pPanelActualizacionInterno->SetSizer( bSizer17 );
         m_pPanelActualizacionInterno->Layout();
@@ -202,7 +202,7 @@ DialogoLoginBase::DialogoLoginBase( wxWindow* parent, wxWindowID id, const wxStr
 
         m_pTCUsuario = new wxTextCtrl( m_pFormPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0 );
         m_pTCUsuario->SetMaxLength( 0 );
-        m_pFormSizer->Add( m_pTCUsuario, 0, wxALIGN_CENTER_VERTICAL|wxEXPAND|wxBOTTOM|wxLEFT, 5 );
+        m_pFormSizer->Add( m_pTCUsuario, 0, wxALIGN_CENTER_VERTICAL|wxBOTTOM|wxLEFT, 5 );
 
         m_staticText3 = new wxStaticText( m_pFormPanel, wxID_ANY, _("Password"), wxDefaultPosition, wxDefaultSize, 0 );
         m_staticText3->Wrap( -1 );
@@ -210,10 +210,10 @@ DialogoLoginBase::DialogoLoginBase( wxWindow* parent, wxWindowID id, const wxStr
 
         m_pTCPassword = new wxTextCtrl( m_pFormPanel, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_PASSWORD );
         m_pTCPassword->SetMaxLength( 0 );
-        m_pFormSizer->Add( m_pTCPassword, 0, wxALIGN_CENTER_VERTICAL|wxEXPAND|wxTOP|wxLEFT, 5 );
+        m_pFormSizer->Add( m_pTCPassword, 0, wxALIGN_CENTER_VERTICAL|wxTOP|wxLEFT, 5 );
 
 
-        bSizer19->Add( m_pFormSizer, 0, wxEXPAND|wxALIGN_CENTER_VERTICAL, 5 );
+        bSizer19->Add( m_pFormSizer, 0, wxALIGN_CENTER_VERTICAL, 5 );
 
 
         bSizer19->Add( 0, 0, 1, wxEXPAND, 5 );

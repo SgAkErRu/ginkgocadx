@@ -28,7 +28,7 @@
 #endif
 
 #include <api/ievento.h>
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <cmath>
 
 #include <vtkImageData.h>

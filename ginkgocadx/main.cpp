@@ -37,7 +37,10 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLin
 #else
 int main(int argc, char** argv)
 {
-
+#ifdef __WXGTK3__
+    setenv("GDK_BACKEND", "x11", 1);
+#endif
+ 
         return Init(argc, argv);
 }
 #endif

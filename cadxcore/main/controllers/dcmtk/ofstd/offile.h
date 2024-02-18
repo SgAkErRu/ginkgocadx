@@ -43,12 +43,12 @@
 #include <dcmtk/ofstd/oftypes.h>    /* for class OFBool */
 #include <dcmtk/ofstd/ofstring.h>   /* for class OFString */
 
-#define INCLUDE_UNISTD
-#define INCLUDE_CSTDIO
-#define INCLUDE_CSTRING
-#define INCLUDE_CSTDARG
-#define INCLUDE_CERRNO
-#define INCLUDE_CWCHAR
+#include <unistd.h>
+#include <cstdio>
+#include <cstring>
+#include <cstdarg>
+#include <cerrno>
+#include <cwchar>
 #include <dcmtk/ofstd/ofstdinc.h>
 
 BEGIN_EXTERN_C

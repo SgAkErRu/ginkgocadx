@@ -157,7 +157,7 @@ static void DIMSE_printNStatusString(std::ostream& dumpStream, int status)
         case STATUS_N_PRINT_BFS_Fail_PrintQueueFull:
                 dumpStream << "0xC601: Basic film session failure - Print queue full";
                 break;
-        case STATUS_N_PRINT_BSB_Fail_PrintQueueFull:
+        case STATUS_N_PRINT_BFB_Fail_PrintQueueFull:
                 dumpStream << "0xC602: Basic film box failure - Print queue full";
                 break;
         case STATUS_N_PRINT_BFS_BFB_Fail_ImageSize:

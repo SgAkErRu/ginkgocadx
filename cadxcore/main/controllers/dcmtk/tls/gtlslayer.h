@@ -45,21 +45,21 @@ public:
 
         /** loads the private key used for authentication of this application from a string.
         *  @param key The private key
-        *  @return TCS_ok if successful, an error code otherwise
+        *  @return EC_Normal if successful, an error code otherwise
         */
-        DcmTransportLayerStatus setPrivateKeyFromString(const std::string& key);
+        OFCondition setPrivateKeyFromString(const std::string& key);
 
         /** loads the certificate (public key) used for authentication of this application from a string.
         *  @param cert The certificate
-        *  @return TCS_ok if successful, an error code otherwise
+        *  @return EC_Normal if successful, an error code otherwise
         */
-        DcmTransportLayerStatus setCertificateFromString(const std::string& cert);
+        OFCondition setCertificateFromString(const std::string& cert);
 
         /** loads a certificate from a string and adds it to the pool of trusted certificates.
         *  @param cert The certificate
-        *  @return TCS_ok if successful, an error code otherwise
+        *  @return EC_Normal if successful, an error code otherwise
         */
-        DcmTransportLayerStatus addSystemTrustedCertificates();
+        OFCondition addSystemTrustedCertificates();
 
 
         /** loads a set of Diffie-Hellman parameters from a string.

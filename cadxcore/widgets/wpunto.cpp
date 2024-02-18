@@ -28,7 +28,7 @@
 #include <api/ioverlay.h>
 #include <api/iwidgetsrenderer.h>
 #include "main/managers/widgetsmanager.h"
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <api/westilo.h>
 #include <cmath>
 
@@ -141,8 +141,8 @@ wxXmlNode* GNC::GCS::Widgets::WPunto::Serializar(const std::string& nombreMedico
 {
         wxXmlNode* resultado = new wxXmlNode(NULL,wxXML_ELEMENT_NODE,wxT("punto_widget"));
         //almacenamos los dos nodos
-        resultado->AddAttribute(new wxXmlProperty(wxT("x"),wxString::Format(wxT("%f"),m_Nodo.x)));
-        resultado->AddAttribute(new wxXmlProperty(wxT("y"),wxString::Format(wxT("%f"),m_Nodo.y)));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("x"),wxString::Format(wxT("%f"),m_Nodo.x)));
+        resultado->AddAttribute(new wxXmlAttribute(wxT("y"),wxString::Format(wxT("%f"),m_Nodo.y)));
         //serializar Metadatos
         SerializarMetadatos(resultado,nombreMedico);
         return resultado;

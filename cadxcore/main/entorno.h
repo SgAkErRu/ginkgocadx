@@ -22,6 +22,8 @@
 #include <list>
 #include <string>
 
+#include <GL/glew.h>
+
 #include <api/internal.h>
 #include <api/globals.h>
 #include <api/ientorno.h>

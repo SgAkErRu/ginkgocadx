@@ -22,7 +22,7 @@
 #include "wtrackball.h"
 #include <main/managers/widgetsmanager.h>
 #include <api/iwidgetsrenderer.h>
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <vtkSmartPointer.h>
 
 #include <cmath>

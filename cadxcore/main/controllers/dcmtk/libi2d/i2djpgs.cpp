@@ -44,10 +44,10 @@
 
 #include "i2djpgs.h"
 
-
 #ifdef MACRO_QUE_ESTORBA
 #define verify MACRO_QUE_ESTORBA
 #endif
+
 
 I2DJpegSource::I2DJpegSource() : m_jpegFileMap(), jpegFile(),
         m_disableProgrTs(OFFalse), m_disableExtSeqTs(OFFalse), m_insistOnJFIF(OFFalse),
@@ -136,7 +136,7 @@ OFCondition I2DJpegSource::readPixelData(Uint16& rows,
 
         // Check for image data in file (look for SOF marker)
         E_JPGMARKER jpegEncoding = E_JPGMARKER_UNKNOWN;
-        OFIterator<JPEGFileMapEntry*> entry = m_jpegFileMap.begin();
+        auto entry = m_jpegFileMap.begin();
         while (entry != m_jpegFileMap.end()) {
                 if ( isSOFMarker((*entry)->marker) ) {
                         jpegEncoding = (E_JPGMARKER) ((*entry)->marker);
@@ -413,7 +413,7 @@ OFCondition I2DJpegSource::copyJPEGStream(char*& pixelData,
         }
 
         // get position of JFIF section and SOI marker
-        OFIterator<JPEGFileMapEntry*> entry = m_jpegFileMap.begin();
+        auto entry = m_jpegFileMap.begin();
         while (entry != m_jpegFileMap.end()) {
                 marker = (*entry)->marker;
                 if ( marker == E_JPGMARKER_APP0 ) {
@@ -474,7 +474,7 @@ OFCondition I2DJpegSource::extractRawJPEGStream(char*& pixelData,
         offile_off_t totalAPPSize = 0;
         OFList<offile_off_t> appPosAndLengths;
 
-        OFIterator<JPEGFileMapEntry*> entry = m_jpegFileMap.begin();
+        auto entry = m_jpegFileMap.begin();
         while (entry != m_jpegFileMap.end()) {
                 marker = (*entry)->marker;
 
@@ -874,7 +874,7 @@ void I2DJpegSource::debugDumpJPEGFileMap() const
         printMessage(m_logStream,"I2DJpegSource: Dumping JPEG marker file map: ");
         if (m_keepAPPn)
                 printMessage(m_logStream, "I2DJpegSource: Keep APPn option enabled, any markers after SOFn marker will not be dumped");
-        OFIterator<JPEGFileMapEntry*> it= m_jpegFileMap.begin();
+        auto it = m_jpegFileMap.begin();
         while (it != m_jpegFileMap.end()) {
                 if (m_logStream) {
                         m_logStream->lockCerr()

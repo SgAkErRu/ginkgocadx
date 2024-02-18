@@ -52,9 +52,8 @@
 #include <vtkOpenGLRenderWindow.h>
 #include <vtkOpenGLTexture.h>
 #include <vtkImageData.h>
-#include <vtkOpenGL.h>
 #include <api/iwidgets.h>
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <vtkDebugLeaks.h>
 #include <vtk/vtkginkgoimageviewer.h>
 #include <api/controllers/icontroladorcarga.h>
@@ -505,50 +504,32 @@ void WidgetsMapper::RenderPiece(vtkRenderer *ren, vtkActor *act)
         // TODO: Reescribir toda esta lógica
         if (this->GetMTime() > this->BuildTime ||
             act->GetProperty()->GetMTime() > this->BuildTime ||
-            ren->GetRenderWindow() != this->LastWindow) {
-                if (!this->ImmediateModeRendering &&
-                    !this->GetGlobalImmediateModeRendering()) {
-                        //this->ReleaseGraphicsResources(ren->GetRenderWindow());
-                        this->LastWindow = ren->GetRenderWindow();
+            ren->GetRenderWindow() != this->LastWindow) 
+            {
+                //this->ReleaseGraphicsResources(ren->GetRenderWindow());
+                this->LastWindow = ren->GetRenderWindow();
 
-                        //bool redimensionado = false;
-                        // get a unique display list id
-                        //this->ListId = glGenLists(1);
-                        //glNewList(this->ListId, GL_COMPILE);
+                //bool redimensionado = false;
+                // get a unique display list id
+                //this->ListId = glGenLists(1);
+                //glNewList(this->ListId, GL_COMPILE);
 
-                        noAbort = this->Draw(ren, act);
-                        //glEndList();
+                noAbort = this->Draw(ren, act);
+                //glEndList();
 
-                        // Time the actual drawing
-                        this->Timer->StartTimer();
-                        //glCallList(this->ListId);
-                        this->Timer->StopTimer();
-                } else {
-                        this->ReleaseGraphicsResources(ren->GetRenderWindow());
-                        this->LastWindow = ren->GetRenderWindow();
-                }
+                // Time the actual drawing
+                this->Timer->StartTimer();
+                //glCallList(this->ListId);
+                this->Timer->StopTimer();
                 if (noAbort) {
                         this->BuildTime.Modified();
                 }
         }// if nothing changed but we are using display lists, draw it
         else {
-                if (!this->ImmediateModeRendering &&
-                    !this->GetGlobalImmediateModeRendering()) {
-                        // Time the actual drawing
-                        this->Timer->StartTimer();
-                        //glCallList(this->ListId);
-                        this->Timer->StopTimer();
-                }
-        }
-
-        // if we are in immediate mode rendering we always
-        // want to draw the primitives here
-        if (this->ImmediateModeRendering ||
-            this->GetGlobalImmediateModeRendering()) {
-                // Time the actual drawing
-                this->Timer->StartTimer();
-                this->Draw(ren, act);
-                this->Timer->StopTimer();
+            // Time the actual drawing
+            this->Timer->StartTimer();
+            //glCallList(this->ListId);
+            this->Timer->StopTimer();
         }
 
         this->TimeToDraw = this->Timer->GetElapsedTime();

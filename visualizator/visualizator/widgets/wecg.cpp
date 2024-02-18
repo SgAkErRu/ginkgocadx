@@ -46,7 +46,7 @@
 #include "wecg.h"
 #include <widgets/openglhelper.h>
 
-#include <vtkgl.h>
+//#include <vtk_glew.h>
 #include <vtkImageData.h>
 #include <vtkImageActor.h>
 #include <vtkPointData.h>
@@ -236,12 +236,12 @@ public:
                 if (!tl->EsValida() || TamTitle.EsNulo()) {
                         const std::string Title = Info.GetTitle();
                         tl->SetFontBold(WIDGETS_TEXT_FONT_FAMILY, GNC::GCS::IControladorPermisos::Instance()->Get("style", "ecg.label.fontSize").ObtenerValor<float>());
-                        textSize = GNC::GCS::GLHelper::calcularBoundingBox((*tl), Title, false, 300.0f); // Tamaño de la region en pixels
+                        textSize = GNC::GCS::GLHelper::calcularBoundingBox((*tl), Title, false, 300.0f); // Tamaï¿½o de la region en pixels
                         tl->Redimensionar(std::ceil(textSize.x), std::ceil(textSize.y));
                         textSize.Asignar(tl->ancho, tl->alto);
 
                         tl->SetFontBold(WIDGETS_TEXT_FONT_FAMILY, GNC::GCS::IControladorPermisos::Instance()->Get("style", "ecg.label.fontSize").ObtenerValor<float>());
-                        textSize = GNC::GCS::GLHelper::calcularBoundingBox((*tl), Title, false, 300.0f); // Tamaño de la region en pixels
+                        textSize = GNC::GCS::GLHelper::calcularBoundingBox((*tl), Title, false, 300.0f); // Tamaï¿½o de la region en pixels
                         GNC::GCS::GLHelper::TColor col(LEAD_TEXT_COLOR);
                         TamTitle = GNC::GCS::GLHelper::dibujarTexto(*tl, Title, col, false);
                 }

@@ -1044,7 +1044,7 @@ void DicomStoreAssociation::Store(ListaRutas listaFicheros, const GNC::GCS::Ptr<
                                 LOG_ERROR("C-STORE", strStream.str().c_str());
                         } else {
                                 bool found = false;
-                                for (OFIterator<OFString> itsc =sopClassUIDList.begin(); itsc != sopClassUIDList.end(); ++itsc) {
+                                for (auto itsc = sopClassUIDList.begin(); itsc != sopClassUIDList.end(); ++itsc) {
                                         if ((*itsc).compare(sopClassUID) == 0) {
                                                 found = true;
                                                 break;

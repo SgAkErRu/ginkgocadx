@@ -38,6 +38,7 @@
 #define _wxVTKRenderWindowInteractor_h_
 
 // For compilers that support precompilation, includes "wx/wx.h".
+#include <GL/glew.h>
 #include "wx/wxprec.h"
 #include <api/api.h>
 #include <memory>
@@ -59,6 +60,7 @@
 // vtk includes
 #include "vtkRenderWindowInteractor.h"
 #include "vtkRenderWindow.h"
+#include "vtkVersionMacros.h"
 
 #include "vtkINRIA3DConfigure.h"
 
@@ -106,7 +108,7 @@ public:
                                     const wxSize &size = wxDefaultSize,
                                     long style = wxWANTS_CHARS | wxNO_FULL_REPAINT_ON_RESIZE | wxCLIP_CHILDREN,
                                     const wxString &name = wxPanelNameStr);
-        vtkTypeMacro(wxVTKRenderWindowInteractor,vtkRenderWindowInteractor);
+        //vtkTypeMacro(wxVTKRenderWindowInteractor,vtkRenderWindowInteractor);
         static wxVTKRenderWindowInteractor * New();
         void PrintSelf(ostream& os, vtkIndent indent);
 

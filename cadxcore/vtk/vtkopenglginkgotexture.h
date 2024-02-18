@@ -28,6 +28,7 @@
 #pragma once
 #include <api/ilock.h>
 #include <vtkOpenGLTexture.h>
+#include <vtkTextureObject.h>
 //BTX
 #include <vtkWeakPointer.h> // needed for vtkWeakPointer.
 //ETX
@@ -63,17 +64,17 @@ public:
         // Description:
         // Get the openGL texture name to which this texture is bound.
         // This is available only if GL version >= 1.1
-        vtkGetMacro(Index, long);
+        vtkGetMacro(Index, unsigned int);
 
-        long GetTextureId() const
+        unsigned int GetTextureId() const
         {
-                return Index;
+            return this->TextureObject->GetTarget();
         }
 
         //indica si la textura tiene id (se ha intentado cargar)
         bool TextureDefined() const
         {
-                return Index != 0;
+            return this->TextureObject->GetTarget() != 0;
         }
 
         void SetTindex(int index)
@@ -87,12 +88,12 @@ public:
 
         int GetTindex()  const
         {
-                return this->TIndex;
+            return this->TIndex;
         }
 
-        operator long () const
+        operator unsigned int () const
         {
-                return Index;
+            return this->TextureObject->GetTarget();
         }
 
         /** Set Image Brightness (-1.0, 0.0, 1.0) (Only aplicable with RGB Images) **/

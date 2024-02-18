@@ -32,7 +32,7 @@
 
 
 #include <iterator>
-#include <vtkgl.h>
+#include <vtk_glew.h>
 #include <api/westilo.h>
 #include <cmath>
 
@@ -214,8 +214,8 @@ wxXmlNode* GNC::GCS::Widgets::WFreeForm::Serializar(const std::string& nombreMed
         int i=0;
         for (VerticesPoligono::iterator it = m_Vertices.begin(); it != m_Vertices.end(); ++it) {
                 wxXmlNode* nodo = new wxXmlNode(NULL,wxXML_ELEMENT_NODE,wxString::Format(wxT("nodo%d"), (int) i));
-                nodo->AddAttribute(new wxXmlProperty(wxT("x"),wxString::Format(wxT("%f"),(*it).x)));
-                nodo->AddAttribute(new wxXmlProperty(wxT("y"),wxString::Format(wxT("%f"),(*it).y)));
+                nodo->AddAttribute(new wxXmlAttribute(wxT("x"),wxString::Format(wxT("%f"),(*it).x)));
+                nodo->AddAttribute(new wxXmlAttribute(wxT("y"),wxString::Format(wxT("%f"),(*it).y)));
                 resultado->AddChild(nodo);
                 i++;
         }
