@@ -101,7 +101,7 @@ public:
         //
 
         /** Init download **/
-        bool AddDownload(const std::string& server, const std::string& modality, bool seriesMode, const std::string& studyUID, const std::string& seriesUID, bool link);
+        bool AddDownload(const std::string& server, const std::string& modality, bool seriesMode, const std::string& studyUID, const std::string& seriesUID, bool link, bool silent = false);
 
 private:
         static DialogoAdquisicion* m_pInstance;

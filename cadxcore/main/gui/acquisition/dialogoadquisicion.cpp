@@ -193,7 +193,7 @@ GNC::GUI::DialogoAdquisicion::DialogoAdquisicion(wxWindow* pParent) : DialogoAdq
                 m_pPanelPACS->Layout();
         }
 
-        m_pAcquisitionTableView = new wxDataViewCtrl( m_pPanelPACS, wxID_ANY, wxDefaultPosition, wxDefaultSize,  wxDV_SINGLE|wxDV_ROW_LINES);
+        m_pAcquisitionTableView = new wxDataViewCtrl( m_pPanelPACS, wxID_ANY, wxDefaultPosition, wxDefaultSize,  wxDV_MULTIPLE|wxDV_ROW_LINES);
         m_pDataViewSizer->Add(m_pAcquisitionTableView, 1, wxEXPAND);
 
         m_pAcquisitionTableModel = new AcquisitionTableModel();
@@ -743,32 +743,35 @@ bool GNC::GUI::DialogoAdquisicion::IsLinkSupported()
 // Obtiene el item seleccionado del TreeList de resultados, genera una descarga, la apila y la inicia.
 void GNC::GUI::DialogoAdquisicion::AddDescarga(bool link)
 {
-        wxDataViewItem selection = m_pAcquisitionTableView->GetSelection();
+    wxDataViewItemArray selections;
+    int count = m_pAcquisitionTableView->GetSelections(selections);
+    const bool silent = count > 1;
 
-        if(selection.IsOk()) {
-                AcquisitionNode* pNode = (AcquisitionNode*) selection.GetID();
-                std::string modality = m_pAcquisitionTableModel->GetModality(pNode);
-                if (pNode->IsStudyNode()) {
-
-                        if (!IsAllowedToDownload(modality)) {
-                                LOG_ERROR("GUI/Adquisition", _Std("Download of modality ") << modality << _Std(" not allowed"));
-                                wxMessageBox(_("You are not allowed to download this kind of modalities."),_("Modality download error"),wxICON_ERROR);
-                        } else {
-                                AddDownload(GetServerSeleccionado(), modality, false, pNode->uid, "", link);
-                        }
+    for (int i = 0; i < count; ++i) 
+    {
+        auto selection = selections[i];
+        if (selection.IsOk()) {
+            AcquisitionNode* pNode = (AcquisitionNode*) selection.GetID();
+            std::string modality = m_pAcquisitionTableModel->GetModality(pNode);
+            if (pNode->IsStudyNode()) {
+                if (!IsAllowedToDownload(modality)) {
+                    LOG_ERROR("GUI/Adquisition", _Std("Download of modality ") << modality << _Std(" not allowed"));
+                    wxMessageBox(_("You are not allowed to download this kind of modalities."),_("Modality download error"),wxICON_ERROR);
                 } else {
-                        if (!modality.empty()) {
-                                if(! IsAllowedToDownload(modality)) {
-                                        LOG_ERROR("GUI/Adquisition", _Std("Download of modality ") << modality << _Std(" not allowed"));
-                                        wxMessageBox(_("You are not allowed to download this kind of modalities."),_("Modality download error"),wxICON_ERROR);
-                                } else {
-                                        AddDownload(GetServerSeleccionado(), modality, true, pNode->GetParent()->uid, pNode->uid, link);
-                                }
-                        }
+                    AddDownload(GetServerSeleccionado(), modality, false, pNode->uid, "", link, silent);
                 }
-        } else {
-                return;
+            } else {
+                if (!modality.empty()) {
+                    if(!IsAllowedToDownload(modality)) {
+                        LOG_ERROR("GUI/Adquisition", _Std("Download of modality ") << modality << _Std(" not allowed"));
+                        wxMessageBox(_("You are not allowed to download this kind of modalities."),_("Modality download error"),wxICON_ERROR);
+                    } else {
+                            AddDownload(GetServerSeleccionado(), modality, true, pNode->GetParent()->uid, pNode->uid, link, silent);
+                    }
+                }
+            }
         }
+    }
 }
 
 // Shows a dialog with the properties of selected treelist item
@@ -862,7 +865,7 @@ void GNC::GUI::DialogoAdquisicion::ProcesarEvento(GNC::GCS::Events::IEvent *evt)
         }
 }
 
-bool GNC::GUI::DialogoAdquisicion::AddDownload(const std::string& server, const std::string& modality, bool seriesMode, const std::string& studyUID, const std::string& seriesUID, bool link)
+bool GNC::GUI::DialogoAdquisicion::AddDownload(const std::string& server, const std::string& modality, bool seriesMode, const std::string& studyUID, const std::string& seriesUID, bool link, bool silent)
 {
         if (server.empty() || (studyUID.empty() && seriesUID.empty())) {
                 LOG_ERROR("GUI/Adquisition", "Empty mandatory values <serverId>, <studyInstanceUID | serieInstanceUID> while adding serie to download queue");
@@ -899,7 +902,7 @@ bool GNC::GUI::DialogoAdquisicion::AddDownload(const std::string& server, const 
                         }
                         base.tags["0008|0052"] = "STUDY";
                 }
-                pParams = new GADAPI::PACSDownloadCommandParams(server, base, link);
+                pParams = new GADAPI::PACSDownloadCommandParams(server, base, link, silent);
         }
 
         if (seriesMode) {
