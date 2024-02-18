@@ -491,11 +491,18 @@ void GNC::GUI::DialogoAdquisicion::OnLinkClick( wxCommandEvent& /*event*/)
 // Eventos del Treelist
 void GNC::GUI::DialogoAdquisicion::OnTreeSelChanged(wxDataViewEvent& event)
 {
+    int count = m_pAcquisitionTableView->GetSelectedItemsCount();
+
+    if (count == 1) {
         wxDataViewItem item = event.GetItem();
         m_pBDescargar->Enable(item.IsOk()); // El item es un estudio o una serie
         m_pBLink->Enable(item.IsOk() && IsLinkSupported());
+    } else if (count > 1) {
+        m_pBDescargar->Enable(true);
+        m_pBLink->Enable(IsLinkSupported());
+    }
 
-        event.Skip(true);
+    event.Skip(true);
 }
 
 void GNC::GUI::DialogoAdquisicion::OnTreeItemActivated(wxDataViewEvent& event)
