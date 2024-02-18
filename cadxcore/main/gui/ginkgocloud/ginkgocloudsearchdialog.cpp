@@ -458,7 +458,7 @@ void GNC::GUI::GinkgoCloudSearchDialog::LoadResults(const std::string& bucketId,
                         wxDate.ParseFormat( dateStr, wxT("%Y-%m-%d %H:%M:%S"), wxDefaultDateTime);
 
                         if(wxDate.IsValid()) {
-                                dateStr = wxString(wxDate.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1)));
+                                dateStr = wxString(wxDate.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local)));
                         }
                         data.push_back( dateStr);
                 }

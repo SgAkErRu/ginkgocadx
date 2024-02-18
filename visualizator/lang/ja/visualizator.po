@@ -650,8 +650,8 @@ msgstr "同期"
 #~ msgid " Counter-ClockWise"
 #~ msgstr " 反時計回り"
 
-#~ msgid "%m/%d/%Y"
-#~ msgstr "%m/%d/%Y"
+#~ msgid "%Y/%m/%d"
+#~ msgstr "%Y/%m/%d"
 
 #~ msgid "3D maximun intensity projection (MIP)"
 #~ msgstr "3D 最大値投影 (MIP)"

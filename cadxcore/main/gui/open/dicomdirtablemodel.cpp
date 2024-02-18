@@ -100,7 +100,7 @@ void GNC::GUI::DicomDirTableModel::GetValue( wxVariant &variant, const wxDataVie
                 wxDateTime studyDateTime;
                 studyDateTime.ParseFormat(wxString::FromUTF8( ostr.str().c_str() ).GetData(), wxT("%Y%m%d%H%M%S"), wxDefaultDateTime);
                 if(studyDateTime.IsValid()) {
-                        variant = wxString(studyDateTime.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1)));
+                        variant = wxString(studyDateTime.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local)));
                 } else {
                         variant = _("00/00/0000 00:00:00");
                 }

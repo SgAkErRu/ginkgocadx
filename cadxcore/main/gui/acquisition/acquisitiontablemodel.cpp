@@ -124,9 +124,9 @@ void GNC::GUI::AcquisitionNode::SetDateTime(const std::string& strDate, const st
                         fecha.SetMinute(hora.GetMinute());
                         fecha.SetSecond(hora.GetSecond());
 
-                        datetime = fecha.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1)).ToUTF8();
+                        datetime = fecha.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local)).ToUTF8();
                 } else {
-                        datetime = fecha.Format(_("%m/%d/%Y 00:00:00"), wxDateTime::TimeZone(wxDateTime::GMT1)).ToUTF8();
+                        datetime = fecha.Format(_("%Y/%m/%d 00:00:00"), wxDateTime::TimeZone(wxDateTime::Local)).ToUTF8();
                 }
         } else {
                 datetime = wxString(wxT("00/00/0000 00:00:00")).ToUTF8();;
@@ -330,8 +330,8 @@ int GNC::GUI::AcquisitionTableModel::Compare( const wxDataViewItem &item1, const
                 wxString str2 = value2.GetString();
 
                 wxDateTime date1,date2;
-                date1.ParseFormat(str1, _("%m/%d/%Y %H:%M:%S"));
-                date2.ParseFormat(str2, _("%m/%d/%Y %H:%M:%S"));
+                date1.ParseFormat(str1, _("%Y/%m/%d %H:%M:%S"));
+                date2.ParseFormat(str2, _("%Y/%m/%d %H:%M:%S"));
                 int res = 0;
                 if (date1.IsValid() && date2.IsValid()) {
                         wxTimeSpan diff = date1.Subtract(date2);

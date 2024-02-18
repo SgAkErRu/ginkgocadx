@@ -677,7 +677,7 @@ msgstr "Sincronizar..."
 #~ msgid "Invert color map"
 #~ msgstr "Invertir mapa de color"
 
-#~ msgid "%m/%d/%Y"
+#~ msgid "%Y/%m/%d"
 #~ msgstr "%d/%m/%Y"
 
 #~ msgid "Select a diagnosis"

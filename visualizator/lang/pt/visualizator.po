@@ -377,7 +377,7 @@ msgstr "Sincronizar..."
 #~ msgid "3D reconstruction"
 #~ msgstr "Reconstrução 3D"
 
-#~ msgid "%m/%d/%Y"
+#~ msgid "%Y/%m/%d"
 #~ msgstr "%d/%m/%Y"
 
 #~ msgid " Counter-ClockWise"

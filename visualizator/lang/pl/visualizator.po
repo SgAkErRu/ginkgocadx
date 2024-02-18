@@ -419,7 +419,7 @@ msgstr "Synchronizuj/Desynchronizuj"
 #~ msgid " Counter-ClockWise"
 #~ msgstr "Przeciwnie do wskazówek zegara"
 
-#~ msgid "%m/%d/%Y"
+#~ msgid "%Y/%m/%d"
 #~ msgstr "%d/%m/%R"
 
 #~ msgid "3D Surface"

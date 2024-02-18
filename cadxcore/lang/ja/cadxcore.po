@@ -846,8 +846,8 @@ msgid "Error storing file, check the permissions over the directory."
 msgstr "ファイル格納中にエラー, ディレクトリ権限をチェックしてください"
 
 #: ..\../commands/comandoexportacion.cpp:233
-msgid "image_%m-%d-%Y_"
-msgstr "画像_%m-%d-%Y_"
+msgid "image_%Y-%m-%d_"
+msgstr "画像_%Y-%m-%d_"
 
 #: ..\../commands/comandoincluirhistorial.cpp:108
 msgid "Exploring directory ..."
@@ -2018,7 +2018,7 @@ msgstr "XML パーサが見つかりません. キー="
 #: ..\../main/controllers/log4cplus/guiappender.cpp:75
 #, fuzzy
 msgid "%Y/%m/%d %H:%M:%S.%q"
-msgstr "%m/%d/%Y %h:%M:%s"
+msgstr "%Y/%m/%d %h:%M:%s"
 
 #: ..\../main/controllers/modalitysettingscontroller.cpp:73
 #: ..\../main/gui/acquisition/dialogoadquisicionbase.cpp:41
@@ -2358,12 +2358,12 @@ msgstr "検査読み込みで内部エラー, 不明なフォーマット"
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:81
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:109
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:110
-msgid "%m/%d/%Y %H:%M:%S"
-msgstr "%m/%d/%Y %h:%M:%s"
+msgid "%Y/%m/%d %H:%M:%S"
+msgstr "%Y/%m/%d %h:%M:%s"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:121
-msgid "%m/%d/%Y 00:00:00"
-msgstr "%m/%d/%Y 00:00:00"
+msgid "%Y/%m/%d 00:00:00"
+msgstr "%Y/%m/%d 00:00:00"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:418
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:444
@@ -6475,8 +6475,8 @@ msgid "<unknown ID>"
 msgstr "<unknown ID>"
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:115
-msgid "%m/%d/%Y"
-msgstr "%m/%d/%Y"
+msgid "%Y/%m/%d"
+msgstr "%Y/%m/%d"
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:214
 #: ..\../wx/gnkinforme/gnkinformebasewx.cpp:124
@@ -7047,8 +7047,8 @@ msgstr "テストタイトル"
 #~ msgid "Twitter"
 #~ msgstr "Twitter"
 
-#~ msgid "%m-%d-%y %H:%M:%S,%q"
-#~ msgstr "%m-%d-%y %H:%M:%S,%q"
+#~ msgid "%Y-%m-%d %H:%M:%S,%q"
+#~ msgstr "%Y-%m-%d %H:%M:%S,%q"
 
 #~ msgid "Reprocess Series"
 #~ msgstr "シリーズの再処理"

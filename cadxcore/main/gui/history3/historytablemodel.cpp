@@ -401,7 +401,7 @@ void GNC::GUI::HistoryTableModel::GetValue( wxVariant &variant, const wxDataView
                         wxDateTime studyDateTime;
                         studyDateTime.ParseFormat(wxString::FromUTF8( pModel->study_datetime.c_str() ).GetData(), wxT("%Y-%m-%dT%H:%M:%S"), wxDefaultDateTime);
                         if(studyDateTime.IsValid()) {
-                                variant = wxString(studyDateTime.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1)));
+                                variant = wxString(studyDateTime.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local)));
                         } else {
                                 variant = _("00/00/0000 00:00:00");
                         }
@@ -411,7 +411,7 @@ void GNC::GUI::HistoryTableModel::GetValue( wxVariant &variant, const wxDataView
                         wxDateTime studyDateTime;
                         studyDateTime.ParseFormat(wxString::FromUTF8( pModel->created_time.c_str() ).GetData(), wxT("%Y-%m-%dT%H:%M:%S"), wxDefaultDateTime);
                         if(studyDateTime.IsValid()) {
-                                variant = wxString(studyDateTime.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1)));
+                                variant = wxString(studyDateTime.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local)));
                         } else {
                                 variant = _("00/00/0000 00:00:00");
                         }
@@ -462,7 +462,7 @@ void GNC::GUI::HistoryTableModel::GetValue( wxVariant &variant, const wxDataView
                         wxDateTime seriesDateTime;
                         seriesDateTime.ParseFormat(wxString::FromUTF8( pModel->series_datetime.c_str() ).GetData(), wxT("%Y-%m-%dT%H:%M:%S"), wxDefaultDateTime);
                         if(seriesDateTime.IsValid()) {
-                                variant = wxString(seriesDateTime.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1)));
+                                variant = wxString(seriesDateTime.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local)));
                         } else {
                                 variant = _("00/00/0000 00:00:00");
                         }
@@ -472,7 +472,7 @@ void GNC::GUI::HistoryTableModel::GetValue( wxVariant &variant, const wxDataView
                         wxDateTime seriesDateTime;
                         seriesDateTime.ParseFormat(wxString::FromUTF8( pModel->created_time.c_str() ).GetData(), wxT("%Y-%m-%dT%H:%M:%S"), wxDefaultDateTime);
                         if(seriesDateTime.IsValid()) {
-                                variant = wxString(seriesDateTime.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1)));
+                                variant = wxString(seriesDateTime.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local)));
                         } else {
                                 variant = _("00/00/0000 00:00:00");
                         }

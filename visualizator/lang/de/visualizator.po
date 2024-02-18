@@ -633,7 +633,7 @@ msgstr "Es wird abgeglichen …"
 #~ msgid "Save changes with medical viewer"
 #~ msgstr "Speichere Änderungen des medizinischen Betrachters"
 
-#~ msgid "%m/%d/%Y"
+#~ msgid "%Y/%m/%d"
 #~ msgstr "%d.%m.%Y"
 
 #~ msgid "Select a diagnosis"

@@ -387,7 +387,7 @@ void VentanaPrincipal::ComprobarActualizaciones()
 
                         if (tryCheck) {
                                 //writes date
-                                GNC::GCS::ConfigurationController::Instance()->writeStringGeneral("/GinkgoCore/LastUpdateDateTime", "LastDate", std::string(wxDateTime::Now().Format(wxT("%d/%m/%Y %H:%M:%S")).ToUTF8()));
+                                GNC::GCS::ConfigurationController::Instance()->writeStringGeneral("/GinkgoCore/LastUpdateDateTime", "LastDate", std::string(wxDateTime::Now().Format(wxT("%Y/%m/%d %H:%M:%S")).ToUTF8()));
                         }
                 }
         }

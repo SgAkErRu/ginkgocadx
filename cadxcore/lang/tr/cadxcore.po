@@ -602,7 +602,7 @@ msgstr ""
 #: ..\../main/controllers/dcmtk/dicomgetassociation.cpp:580
 #, fuzzy, c-format
 msgid "Downloading file %d"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../commands/acquirefromurlcommand.cpp:81
 #, fuzzy
@@ -800,7 +800,7 @@ msgstr ""
 #: ..\../commands/comandoexportacion.cpp:158
 #, fuzzy, c-format
 msgid "Exporting file %d of %d"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../commands/comandoexportacion.cpp:213
 msgid "Error storing file, check the permissions over the directory."
@@ -808,8 +808,8 @@ msgstr ""
 
 #: ..\../commands/comandoexportacion.cpp:233
 #, fuzzy
-msgid "image_%m-%d-%Y_"
-msgstr "%m/%d/%Y"
+msgid "image_%Y-%m-%d_"
+msgstr "%Y/%m/%d"
 
 #: ..\../commands/comandoincluirhistorial.cpp:108
 msgid "Exploring directory ..."
@@ -1168,7 +1168,7 @@ msgstr ""
 #: ..\../commands/exporttodicomdircommand.cpp:338
 #, fuzzy, c-format
 msgid "Exporting series %d of %d"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../commands/exporttodicomdircommand.cpp:271
 msgid "Some of selected series has been deleted"
@@ -1746,7 +1746,7 @@ msgstr ""
 #: ..\../main/controllers/dcmtk/dicomgetassociation.cpp:577
 #, fuzzy, c-format
 msgid "Downloading file %d/%d"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/controllers/dcmtk/dicomgetassociation.cpp:597
 msgid "Study download size limit exceeded"
@@ -1829,7 +1829,7 @@ msgstr ""
 #: ..\../main/controllers/dcmtk/dicomstoreassociation.cpp:1285
 #, fuzzy, c-format
 msgid "Uploading file %d of %d"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/controllers/dicommanager.cpp:504
 #: ..\../main/controllers/dicommanager.cpp:531
@@ -1944,7 +1944,7 @@ msgstr ""
 #: ..\../main/controllers/log4cplus/guiappender.cpp:75
 #, fuzzy
 msgid "%Y/%m/%d %H:%M:%S.%q"
-msgstr "%m/%d/%Y %H:%M:%S"
+msgstr "%Y/%m/%d %H:%M:%S"
 
 #: ..\../main/controllers/modalitysettingscontroller.cpp:73
 #: ..\../main/gui/acquisition/dialogoadquisicionbase.cpp:41
@@ -2279,12 +2279,12 @@ msgstr ""
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:81
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:109
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:110
-msgid "%m/%d/%Y %H:%M:%S"
-msgstr "%m/%d/%Y %H:%M:%S"
+msgid "%Y/%m/%d %H:%M:%S"
+msgstr "%Y/%m/%d %H:%M:%S"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:121
-msgid "%m/%d/%Y 00:00:00"
-msgstr "%m/%d/%Y 00:00:00"
+msgid "%Y/%m/%d 00:00:00"
+msgstr "%Y/%m/%d 00:00:00"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:418
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:444
@@ -2906,7 +2906,7 @@ msgstr ""
 #: ..\../main/gui/configuration/hangingprotocolconfigurationpanel.cpp:715
 #, fuzzy, c-format
 msgid "Window %d"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/gui/configuration/hangingprotocolconfigurationpanel.cpp:719
 msgid "This view doesn't support multiple windows"
@@ -4510,7 +4510,7 @@ msgstr ""
 #: ..\../main/gui/export/pasosexportacionbase.cpp:38
 #, fuzzy
 msgid "Export all files of opened tab"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/gui/export/pasosexportacionbase.cpp:55
 msgid "JPEG"
@@ -4663,7 +4663,7 @@ msgstr ""
 #: ..\../main/gui/history3/historypanel3.cpp:481
 #, fuzzy, c-format
 msgid " (%d images)"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/gui/history3/historypanel3.cpp:634
 msgid "Open study with .."
@@ -4785,7 +4785,7 @@ msgstr ""
 #: ..\../main/gui/open/dicomdirtablemodel.cpp:105
 #, fuzzy
 msgid "00/00/0000 00:00:00"
-msgstr "%m/%d/%Y 00:00:00"
+msgstr "%Y/%m/%d 00:00:00"
 
 #: ..\../main/gui/history3/historytoolmenu.cpp:138
 #, fuzzy
@@ -5236,7 +5236,7 @@ msgstr ""
 #: ..\../main/gui/import/wxwizardimportacionginkgo.cpp:369
 #, fuzzy, c-format
 msgid "Step %d of %d: "
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/gui/import/wxwizardimportacionginkgo.cpp:376
 msgid "&End"
@@ -5724,7 +5724,7 @@ msgstr ""
 #: ..\../main/gui/pacsupload/pacsuploaddialog.cpp:69
 #, fuzzy
 msgid "0000/00/00 00:00:00"
-msgstr "%m/%d/%Y 00:00:00"
+msgstr "%Y/%m/%d 00:00:00"
 
 #: ..\../main/gui/pacsupload/pacsuploaddialogbase.cpp:27
 #: ..\../main/gui/pacsupload/pacsuploaddialogbase.h:57
@@ -5798,7 +5798,7 @@ msgstr "0"
 #: ..\../main/gui/progress/statusbarprogreso.cpp:192
 #, fuzzy, c-format
 msgid "There are %d pending tasks"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/gui/selectpacsserver/selectpacsserverbase.cpp:27
 #: ..\../main/gui/selectpacsserver/selectpacsserverbase.h:55
@@ -5947,12 +5947,12 @@ msgstr ""
 #: ..\../main/tools/metricgridtool.cpp:87
 #, fuzzy
 msgid "Scale Y"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/tools/metricgridtool.cpp:91
 #, fuzzy
 msgid "Y axis scale"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: ..\../main/tools/metricgridtool.cpp:206
 msgid "Show grid"
@@ -6279,8 +6279,8 @@ msgid "<unknown ID>"
 msgstr ""
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:115
-msgid "%m/%d/%Y"
-msgstr "%m/%d/%Y"
+msgid "%Y/%m/%d"
+msgstr "%Y/%m/%d"
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:214
 #: ..\../wx/gnkinforme/gnkinformebasewx.cpp:124

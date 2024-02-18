@@ -121,7 +121,7 @@ void GnkInformeBase::SetTags(GNC::GCS::Ptr<GIL::DICOM::DicomDataset>& pBase, GNC
                         wxDateTime fecha;
                         fecha.ParseFormat(wxString::FromUTF8(tag.c_str()),wxT("%Y%m%d"));
                         if(fecha.IsValid()) {
-                                listaDatosDemograficos.push_back(TDatoDemografico(_Std("Birth date") , std::string(fecha.Format(_("%m/%d/%Y")).ToUTF8())));
+                                listaDatosDemograficos.push_back(TDatoDemografico(_Std("Birth date") , std::string(fecha.Format(_("%Y/%m/%d")).ToUTF8())));
                         }
                 }
                 if(base.getTag("0010|1020",tag) && tag != "") {//altura
@@ -184,7 +184,7 @@ void GnkInformeBase::ConsolidarComun(GNC::GCS::Ptr<GIL::DICOM::TipoPrivateTags>&
                 os << m_cadenaConsolidaciones << std::endl;
         }
 
-        wxString fecha = wxDateTime::Now().Format(wxT("%H:%M:%S  %d/%m/%Y"));
+        wxString fecha = wxDateTime::Now().Format(wxT("%H:%M:%S  %Y/%m/%d"));
         std::string medicoConsolida = medico;
         if (medicoConsolida == "") {
                 medicoConsolida = _Std("Unknown");

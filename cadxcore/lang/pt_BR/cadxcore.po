@@ -854,7 +854,7 @@ msgid "Error storing file, check the permissions over the directory."
 msgstr "Erro ao armazenar arquivo, verifique permissões do diretório."
 
 #: ..\../commands/comandoexportacion.cpp:233
-msgid "image_%m-%d-%Y_"
+msgid "image_%Y-%m-%d_"
 msgstr "imagem_%d-%m-%Y_"
 
 #: ..\../commands/comandoincluirhistorial.cpp:108
@@ -2420,11 +2420,11 @@ msgstr "Erro interno ao ler o estudo, formato desconhecido "
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:81
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:109
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:110
-msgid "%m/%d/%Y %H:%M:%S"
+msgid "%Y/%m/%d %H:%M:%S"
 msgstr "%d/%m/%Y %H:%M:%S"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:121
-msgid "%m/%d/%Y 00:00:00"
+msgid "%Y/%m/%d 00:00:00"
 msgstr "%d/%m/%Y 00:00:00"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:418
@@ -6766,7 +6766,7 @@ msgid "<unknown ID>"
 msgstr "<ID desconhecido>"
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:115
-msgid "%m/%d/%Y"
+msgid "%Y/%m/%d"
 msgstr "%d/%m/%Y"
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:214
@@ -7159,7 +7159,7 @@ msgstr "Test connection"
 #~ "Um erro ocorreu carregando o Ginkgo News. Verifique sua conexão com a "
 #~ "internet"
 
-#~ msgid "%m-%d-%y %H:%M:%S,%q"
+#~ msgid "%Y-%m-%d %H:%M:%S,%q"
 #~ msgstr "%d-%m-%y %H:%M:%S,%q"
 
 #~ msgid "Extensions Support"

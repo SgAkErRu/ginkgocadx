@@ -84,7 +84,7 @@ PACSUploadDialog::PACSUploadDialog(wxWindow* pParent, const std::list<long>& ser
                 seriesDate.ParseFormat(wxString::FromUTF8( sm.series_datetime.c_str() ).GetData(), wxT("%Y-%m-%dT%H:%M:%S"), wxDefaultDateTime);
                 {
                         if(seriesDate.IsValid()) {
-                                ostr << wxString(seriesDate.Format(_("%m/%d/%Y %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::GMT1))).ToUTF8();
+                                ostr << wxString(seriesDate.Format(_("%Y/%m/%d %H:%M:%S"), wxDateTime::TimeZone(wxDateTime::Local))).ToUTF8();
                         } else {
                                 ostr << _Std("0000/00/00 00:00:00");
                         }

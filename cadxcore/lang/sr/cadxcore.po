@@ -841,7 +841,7 @@ msgstr ""
 
 #: ..\../commands/comandoexportacion.cpp:233
 #, fuzzy
-msgid "image_%m-%d-%Y_"
+msgid "image_%Y-%m-%d_"
 msgstr "%d. %m. %Y."
 
 #: ..\../commands/comandoincluirhistorial.cpp:108
@@ -2396,11 +2396,11 @@ msgstr ""
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:81
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:109
 #: ..\../main/gui/ginkgocloud/wxtreelistctrlcloud.h:110
-msgid "%m/%d/%Y %H:%M:%S"
+msgid "%Y/%m/%d %H:%M:%S"
 msgstr "%d. %m. %Y. %H:%M:%S"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:121
-msgid "%m/%d/%Y 00:00:00"
+msgid "%Y/%m/%d 00:00:00"
 msgstr "%d. %m. %Y. 00:00:00"
 
 #: ..\../main/gui/acquisition/acquisitiontablemodel.cpp:418
@@ -6624,7 +6624,7 @@ msgid "<unknown ID>"
 msgstr "<непознат ИБ>"
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:115
-msgid "%m/%d/%Y"
+msgid "%Y/%m/%d"
 msgstr "%d. %m. %Y."
 
 #: ..\../wx/gnkinforme/gnkinformebase.cpp:214
@@ -6876,7 +6876,7 @@ msgstr ""
 #~ msgid "%d/%m/%Y %H:%M:%S"
 #~ msgstr "%d.%m.%Y, %H:%M:%S"
 
-#~ msgid "%m-%d-%y %H:%M:%S,%q"
+#~ msgid "%Y-%m-%d %H:%M:%S,%q"
 #~ msgstr "%d. %m. %y %H:%M:%S,%q"
 
 #~ msgid "Abdomen"

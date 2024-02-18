@@ -83,8 +83,8 @@ public:
                         } else {
                                 //date compare...
                                 wxDateTime date1,date2;
-                                date1.ParseFormat(GetItemText(item1, DATE_COLUMN), _("%m/%d/%Y %H:%M:%S"));
-                                date2.ParseFormat(GetItemText(item2, DATE_COLUMN), _("%m/%d/%Y %H:%M:%S"));
+                                date1.ParseFormat(GetItemText(item1, DATE_COLUMN), _("%Y/%m/%d %H:%M:%S"));
+                                date2.ParseFormat(GetItemText(item2, DATE_COLUMN), _("%Y/%m/%d %H:%M:%S"));
                                 if (date1.IsValid() && date2.IsValid()) {
                                         wxTimeSpan diff = date1.Subtract(date2);
                                         if (diff.IsPositive()) {
@@ -112,8 +112,8 @@ public:
                                 //study and series level
                                 //date compare...
                                 wxDateTime date1,date2;
-                                date1.ParseFormat(GetItemText(item1, DATE_COLUMN), _("%m/%d/%Y %H:%M:%S"));
-                                date2.ParseFormat(GetItemText(item2, DATE_COLUMN), _("%m/%d/%Y %H:%M:%S"));
+                                date1.ParseFormat(GetItemText(item1, DATE_COLUMN), _("%Y/%m/%d %H:%M:%S"));
+                                date2.ParseFormat(GetItemText(item2, DATE_COLUMN), _("%Y/%m/%d %H:%M:%S"));
                                 if (date1.IsValid() && date2.IsValid()) {
                                         wxTimeSpan diff = date1.Subtract(date2);
                                         if (diff.IsPositive()) {

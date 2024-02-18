@@ -250,7 +250,7 @@ wxString ComandoExportacion::GetFichero(const wxString& extension)
                 return dir;
         } else {
                 wxString destino(wxEmptyString);
-                std::string nombre (wxDateTime::Now().Format(_("image_%m-%d-%Y_")).ToUTF8());
+                std::string nombre (wxDateTime::Now().Format(_("image_%Y-%m-%d_")).ToUTF8());
                 std::string stdDir(TOPATH(dir));
                 std::string stdExtension(TOPATH(extension));
                 int indice=0;

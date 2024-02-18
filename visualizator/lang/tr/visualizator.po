@@ -307,7 +307,7 @@ msgstr ""
 #: visualizator/wxvtk/previewpanelvisualizator.cpp:204
 #, fuzzy, c-format
 msgid "%d series"
-msgstr "%m/%d/%Y"
+msgstr "%Y/%m/%d"
 
 #: visualizator/wxvtk/visualizatorviews.cpp:193
 msgid "Select the view you want to synchronize with the current"
@@ -391,8 +391,8 @@ msgstr ""
 #~ msgid "Description"
 #~ msgstr "Açıklama"
 
-#~ msgid "%m/%d/%Y"
-#~ msgstr "%m/%d/%Y"
+#~ msgid "%Y/%m/%d"
+#~ msgstr "%Y/%m/%d"
 
 #~ msgid "Color Map"
 #~ msgstr "Renk Haritası"
