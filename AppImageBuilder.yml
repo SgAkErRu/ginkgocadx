@@ -1,0 +1,61 @@
+# appimage-builder recipe see https://appimage-builder.readthedocs.io for details
+version: 1
+AppDir:
+  after_runtime: |
+    cp $TARGET_APPDIR/runtime/compat/usr/lib/x86_64-linux-gnu/libnsl.so.* $TARGET_APPDIR/usr/lib/x86_64-linux-gnu/
+  path: /home/user/GinkgoAppImage/AppDir
+  app_info:
+    id: ginkgocadx
+    name: GinkgoCADx
+    icon: ginkgocadx
+    version: 3.8.8-mod1
+    exec: usr/bin/ginkgocadx
+    exec_args: $@
+  apt:
+    arch:
+    - amd64
+    allow_unauthenticated: true
+    sources:
+    - sourceline: deb http://deb.debian.org/debian/ bullseye main contrib
+    - sourceline: deb http://security.debian.org/debian-security bullseye-security
+        main
+    - sourceline: deb http://deb.debian.org/debian/ bullseye-updates main contrib
+    include:
+    # deps from deb package (ginkgocadx in deb11)
+    - libc6
+    - libcairo2
+    - libcurl3-gnutls
+    - libdcmtk15
+    - libgcc-s1
+    - libgl1
+    - libgtk-3-0
+    - libinsighttoolkit4.13
+    - libjsoncpp24
+    - libsqlite3-0
+    - libssl1.1
+    - libstdc++6
+    - libvtk6.3
+    - libwxbase3.0-0v5
+    - libwxgtk3.0-gtk3-0v5
+    # deps that required, but not set in deb package
+    - libgdk-pixbuf-2.0-0
+    - librsvg2-common
+    - shared-mime-info
+    - libnsl2
+    - dash
+  files:
+    exclude:
+    - usr/share/man
+    - usr/share/doc/*/README.*
+    - usr/share/doc/*/changelog.*
+    - usr/share/doc/*/NEWS.*
+    - usr/share/doc/*/TODO.*
+  runtime:
+    path_mappings:
+      - /usr/share/libdcmtk15:$APPDIR/usr/share/libdcmtk15
+      - /usr/share/ginkgocadx:$APPDIR/usr/share/ginkgocadx
+    env:
+      XDG_DATA_DIRS: $APPDIR/usr/share:$XDG_DATA_DIRS
+AppImage:
+  arch: x86_64
+  update-information: guess
