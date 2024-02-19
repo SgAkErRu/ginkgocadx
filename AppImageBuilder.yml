@@ -38,11 +38,52 @@ AppDir:
     - libwxbase3.0-0v5
     - libwxgtk3.0-gtk3-0v5
     # deps that required, but not set in deb package
+    # for system
+    - dash
+    # something with images (png, svg)
     - libgdk-pixbuf-2.0-0
     - librsvg2-common
     - shared-mime-info
+    # something with network
     - libnsl2
-    - dash
+    # vulkan
+    - mesa-vulkan-drivers
+    # opengl
+    - libgl1-mesa-dri
+    - libatomic1
+    - libdrm-radeon1
+    - libdrm-nouveau2
+    - libdrm-amdgpu1
+    - libdrm-intel1
+    - libdrm2
+    # more opengl
+    - libglvnd0
+    - libglx0
+    - libglx-mesa0
+    - libglapi-mesa
+    # wayland
+    - libwayland-egl1
+    - libwayland-cursor0
+    - libwayland-client0
+    # xcb
+    - libxcb1
+    - libxcb-shm0
+    - libxcb-render0
+    - libxcb-glx0
+    - libx11-xcb1
+    - libxcb-dri2-0
+    - libxcb-dri3-0
+    - libxcb-present0
+    - libxcb-xfixes0
+    # x11
+    - libx11-6
+    - libxxf86vm1
+    - libxext6
+    - libxau6
+    - libxdmcp6
+    # gtk
+    - libcanberra-gtk3-module
+    - kde-config-gtk-style
   files:
     exclude:
     - usr/share/man
