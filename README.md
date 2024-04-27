@@ -1,3 +1,70 @@
+# Ginkgo CADx - modified version with AppImage #
+
+## Changes ##
+
+1. Allow multiple selections for downloading.
+2. Enable download button, if selected items more than one.
+3. One date style (Y-m-d)
+4. Add AppImageBuilder.yml
+
+## Build AppImage ##
+
+1. Install Debian 11 (or do it in Docker) and install `git`
+
+2. Get `ginkgocadx` debian sources (for example, it will create dir `ginkgocadx-3.8.8`):
+
+```
+apt source ginkgocadx
+```
+
+3. Clone this repo and move changes of this branch like a debian patch:
+
+```
+git clone https://gitlab.com/SgAkErRu/ginkgocadx.git -b improvements
+cd ./ginkgocadx
+git format-patch 3.8.8 --stdout > ../improvements.patch
+cp ../improvements.patch ../ginkgocadx-3.8.8/debian/patches/
+```
+
+4. Build and install new modified debian package:
+
+```
+cd ginkgocadx-3.8.8/
+sudo apt install packaging-dev debian-keyring devscripts equivs
+sudo mk-build-deps --install --remove
+sudo dch -l mod
+fakeroot debian/rules binary
+sudo dpkg-buildpackage -b -us -uc
+sudo apt install ../ginkgocadx_*_*.deb
+```
+
+5. Get or install `appimage-builder` (https://appimage-builder.readthedocs.io/en/latest/intro/install.html)
+
+6. Create folder `GinkgoAppImage` and put `AppImageBuilder.yml` there, like `/home/user/GinkgoAppImage/`. 
+
+Also change path in `AppImageBuilder.yml`, if you have path is not `/home/user/GinkgoAppImage/...`
+
+7. Create there `AppDir` folder and unzip debian package binary files (`data.tar.xz`) there, like:
+
+`AppDir/usr/bin/ginkgocadx`
+`AppDir/usr/lib/...`
+`AppDir/usr/share/...`
+
+etc.
+
+8. Build AppImage (it will create AppImage with `AppDir` binaries and deps that included in `AppImageBuilder.yml`):
+
+```
+cd ./GinkgoAppImage
+appimage-builder
+```
+
+9. Launch `GinkgoCADx-3.8.8-mod1-x86_64.AppImage`
+
+==========================================
+==========================================
+==========================================
+
 [![Build Status](https://travis-ci.org/gerddie/ginkgocadx.svg?branch=master)](https://travis-ci.org/gerddie/ginkgocadx)
 [![Coverity Status](https://scan.coverity.com/projects/8214/badge.svg)](https://scan.coverity.com/projects/ginkgocadx)
 
